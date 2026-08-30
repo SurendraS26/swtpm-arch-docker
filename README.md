@@ -42,7 +42,11 @@ tpm2_pcrread --tcti="swtpm:host=127.0.0.1,port=2321" sha256
 - `tpm2-tools` on the host
 
 ## References
+Libtpms-based TPM emulator with socket, character device, and Linux CUSE interface.
+<https://github.com/stefanberger/swtpm>
 
+Docker image of the Software TPM Emulator (SWTPM).
+<https://github.com/danieltrick/swtpm-docker>
 ## License
 
 ```MIT
