@@ -13,7 +13,8 @@ Installing SWTPM-Docker-Arch
 ```sh
 git clone https://github.com/SurendraS26/swtpm-arch-docker.git
 cd swtpm-arch-docker
-docker build -t swtpm-arch -f Dockerfile . 
+docker build -t swtpm-arch -f Dockerfile .
+docker run -p 127.0.0.1:2321-2322:2321-2322 swtpm-arch 
 ```
 >Note : Don't miss the dot in the above command.
 
