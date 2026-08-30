@@ -9,14 +9,11 @@ A ready-to-use Docker image for [**SWTPM**](https://github.com/stefanberger/swtp
 Usage
 -----
 
+Installing SWTPM-Docker-Arch
 ```sh
 $ git clone https://github.com/SurendraS26/swtpm-arch-docker.git
 $ cd swtpm-arch-docker
 $ docker build -t swtpm-arch .
-$ docker run -d --name swtpm-arch \
-  -p 2321:2321 -p 2322:2322 \
-  -v swtpm-arch-state:/var/lib/swtpm/tpmstate \
-  swtpm-arch
 ```
 
 Connect using [`tpm2-tools`](https://github.com/tpm2-software/tpm2-tools):
