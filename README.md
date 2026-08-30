@@ -1,55 +1,54 @@
-## swtpm-arch-docker
+![SWTPM Docker Arch Logo](etc/banner.png)
 
-Arch Linux Docker image running a software TPM 2.0 (swtpm), installed via pacman.
+SWTPM Docker Arch
+=================
 
-### Intial setup
-```bash
-git clone https://github.com/SurendraS26/swtpm-arch-docker.git
-cd swtpm-arch-docker
-```
+A ready-to-use Docker image for [**SWTPM**](https://github.com/stefanberger/swtpm), a software-based TPM 2.0 emulator, built on Arch Linux and installed directly from the official pacman repositories.
 
-### Build
 
-```bash
-docker build -t swtpm-arch .
-```
+Usage
+-----
 
-### Run
-
-```bash
-docker run -d --name swtpm-arch \
+```sh
+$ git clone https://github.com/SurendraS26/swtpm-arch-docker.git
+$ cd swtpm-arch-docker
+$ docker build -t swtpm-arch .
+$ docker run -d --name swtpm-arch \
   -p 2321:2321 -p 2322:2322 \
   -v swtpm-arch-state:/var/lib/swtpm/tpmstate \
   swtpm-arch
 ```
 
-### Connect (host)
+Connect using [`tpm2-tools`](https://github.com/tpm2-software/tpm2-tools):
 
-```bash
-export TPM2TOOLS_TCTI="swtpm:host=127.0.0.1,port=2321"
-tpm2_startup -T swtpm:host=127.0.0.1,port=2321 -c
+```sh
+$ tpm2_startup -T swtpm:host=127.0.0.1,port=2321 -c
+$ tpm2_pcrread --tcti="swtpm:host=127.0.0.1,port=2321" sha256
 ```
 
-### Verify
-
-```bash
-tpm2_pcrread --tcti="swtpm:host=127.0.0.1,port=2321" sha256
+TCTI configuration for TSS2:
+```
+swtpm:host=127.0.0.1,port=2321
 ```
 
-### Requirements
+
+Requirements
+------------
 
 - Docker
 - `tpm2-tools` on the host
 
-## References
-Libtpms-based TPM emulator with socket, character device, and Linux CUSE interface.
-<https://github.com/stefanberger/swtpm>
 
-Docker image of the Software TPM Emulator (SWTPM).
-<https://github.com/danieltrick/swtpm-docker>
-## License
+Acknowledgement
+----------------
 
-```MIT
+This image bundles [**SWTPM**](https://github.com/stefanberger/swtpm) and [**libtpms**](https://github.com/stefanberger/libtpms) (IBM Corporation, 3-Clause BSD), and is built on [**Arch Linux**](https://archlinux.org/), whose components carry their own respective open-source licenses.
+
+
+License
+-------
+
+```
 MIT License
 
 Copyright (c) 2026 Surendra S
