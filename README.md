@@ -11,17 +11,17 @@ Usage
 
 Installing SWTPM-Docker-Arch
 ```sh
-$ git clone https://github.com/SurendraS26/swtpm-arch-docker.git
-$ cd swtpm-arch-docker
-$ docker build -t swtpm-arch -f Dockerfile . 
+git clone https://github.com/SurendraS26/swtpm-arch-docker.git
+cd swtpm-arch-docker
+docker build -t swtpm-arch -f Dockerfile . 
 ```
 >Note : Don't miss the dot in the above command.
 
 Connect using [`tpm2-tools`](https://github.com/tpm2-software/tpm2-tools):
 
 ```sh
-$ tpm2_startup -T swtpm:host=127.0.0.1,port=2321 -c
-$ tpm2_pcrread --tcti="swtpm:host=127.0.0.1,port=2321" sha256
+tpm2_startup -T swtpm:host=127.0.0.1,port=2321 -c
+tpm2_pcrread --tcti="swtpm:host=127.0.0.1,port=2321" sha256
 ```
 
 TCTI configuration for TSS2:
