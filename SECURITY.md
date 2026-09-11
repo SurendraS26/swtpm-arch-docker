@@ -1,7 +1,5 @@
 # Security Policy
 
-## Supported Versions
-
 Currently, security updates are provided for the latest release only.
 
 ## Reporting a Vulnerability
