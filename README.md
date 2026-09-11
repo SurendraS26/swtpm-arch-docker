@@ -16,7 +16,7 @@ cd swtpm-arch-docker/{ARCH}
 docker build -t swtpm-arch -f Dockerfile .
 docker run -p 127.0.0.1:2321-2322:2321-2322 swtpm-arch 
 ```
->Note : Contain's arm64 build version which is still in testing phase feel free to try it out.
+>Note : ARM64 build included (testing phase), try it if you're curious 😄.
 
 Connect using [`tpm2-tools`](https://github.com/tpm2-software/tpm2-tools):
 
