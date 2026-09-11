@@ -30,7 +30,6 @@ TCTI configuration for TSS2:
 swtpm:host=127.0.0.1,port=2321
 ```
 
-
 Requirements
 ------------
 
