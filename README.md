@@ -12,11 +12,11 @@ Usage
 Installing SWTPM-Docker-Arch
 ```sh
 git clone https://github.com/SurendraS26/swtpm-arch-docker.git
-cd swtpm-arch-docker/{ARCH}
+cd swtpm-arch-docker
 docker build -t swtpm-arch -f Dockerfile .
 docker run -p 127.0.0.1:2321-2322:2321-2322 swtpm-arch 
 ```
->Note : ARM64 build included (testing phase), try it if you're curious 😄.
+>Note : Since Arch is rolling distro, containers are tested and then released.
 
 Connect using [`tpm2-tools`](https://github.com/tpm2-software/tpm2-tools):
 
