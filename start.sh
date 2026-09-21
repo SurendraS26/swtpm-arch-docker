@@ -9,7 +9,7 @@ BOLD='\033[1m'
 NC='\033[0m'
 TPMSERVE="2321"
 TPMCTRL="2322"
-TPM2TOOLS_TCTI="swtpm:host=trustedge-c2,port=2321"
+TPM2TOOLS_TCTI="swtpm:host=127.0.0.1,port=2321"
 echo -e ""
 echo -e "${NC}${BOLD}SWTPM-Arch-Docker x86_64 Build.${NC}"
 echo -e "${NC}Github: ${BOLD}SurendraS26${NC} ${YELLOW}(-_-)${NC}"
