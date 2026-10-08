@@ -1,5 +1,5 @@
 FROM archlinux:base
-RUN pacman -Syu --noconfirm --needed swtpm tpm2-tss && \
+RUN pacman -Syu --noconfirm --needed swtpm && \
     pacman -Scc --noconfirm && \
     rm -rf /var/cache/pacman/pkg/* /var/lib/pacman/sync/*
 RUN mkdir -p /var/lib/swtpm/tpmstate
