@@ -39,4 +39,4 @@ jobs:
           files: swtpm-arch-docker.tar.xz
           overwrite_files: true
           make_latest: true
-          body_path: .github/release-notes.md
+          body_path: .github/workflows/release-notes.md
